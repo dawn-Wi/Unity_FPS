@@ -1,48 +1,52 @@
- using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- using Random = UnityEngine.Random;
+using Random = UnityEngine.Random;
 
- public class GunController : MonoBehaviour
+public class GunController : MonoBehaviour
 {
-    [SerializeField] 
-    private Gun _currentGun;
+    public static bool _isActivate = true;
+
+    [SerializeField] private Gun _currentGun;
 
     private float _currentFireRate;
 
     private bool _isReload = false;
 
-    [HideInInspector]
-    public bool _isFineSightMode = false;
+    [HideInInspector] public bool _isFineSightMode = false;
 
     private Vector3 _originPos;
-    
+
     private AudioSource _audioSource;
 
     private RaycastHit _hitInfo;
 
-    [SerializeField]
-    private Camera _theCam;
+    [SerializeField] private Camera _theCam;
 
     private Crosshair _theCrosshair;
 
-    [SerializeField] 
-    private GameObject _hit_effect_prefab;
-    
+    [SerializeField] private GameObject _hit_effect_prefab;
+
     private void Start()
     {
         _originPos = Vector3.zero;
         _audioSource = GetComponent<AudioSource>();
         _theCrosshair = FindObjectOfType<Crosshair>();
+
+        WeaponManager._currentWeapon = _currentGun.GetComponent<Transform>();
+        WeaponManager._currentWeaponAnim = _currentGun.anim;
     }
 
     private void Update()
     {
-        GunFireRateCalc();
-        TryFire();
-        TryReload();
-        TryFineSight();
+        if (_isActivate)
+        {
+            GunFireRateCalc();
+            TryFire();
+            TryReload();
+            TryFineSight();
+        }
     }
 
     private void GunFireRateCalc()
@@ -51,9 +55,9 @@ using UnityEngine;
             _currentFireRate -= Time.deltaTime;
     }
 
-    private void TryFire() 
+    private void TryFire()
     {
-        if (Input.GetButton("Fire1") && _currentFireRate<=0 && !_isReload)
+        if (Input.GetButton("Fire1") && _currentFireRate <= 0 && !_isReload)
         {
             Fire();
         }
@@ -63,8 +67,9 @@ using UnityEngine;
     {
         if (!_isReload)
         {
-            if (_currentGun._currentBulletCount > 0){
-                Shoot(); 
+            if (_currentGun._currentBulletCount > 0)
+            {
+                Shoot();
             }
             else
             {
@@ -78,7 +83,7 @@ using UnityEngine;
     {
         _theCrosshair.FireAnimation();
         _currentGun._currentBulletCount--;
-        _currentFireRate = _currentGun._fireRate; 
+        _currentFireRate = _currentGun._fireRate;
         PlaySE(_currentGun._fire_Sound);
         _currentGun._muzzleFlash.Play();
         Hit();
@@ -88,27 +93,43 @@ using UnityEngine;
 
     private void Hit()
     {
-        if (Physics.Raycast(_theCam.transform.position, _theCam.transform.forward + 
-                                                        new Vector3(Random.Range(-_theCrosshair.GetAccuracy() - _currentGun._accuracy, _theCrosshair.GetAccuracy() + _currentGun._accuracy),
-                                                                    Random.Range(-_theCrosshair.GetAccuracy() - _currentGun._accuracy, _theCrosshair.GetAccuracy() + _currentGun._accuracy),
-                                                                    0), 
+        if (Physics.Raycast(_theCam.transform.position, _theCam.transform.forward +
+                                                        new Vector3(
+                                                            Random.Range(
+                                                                -_theCrosshair.GetAccuracy() - _currentGun._accuracy,
+                                                                _theCrosshair.GetAccuracy() + _currentGun._accuracy),
+                                                            Random.Range(
+                                                                -_theCrosshair.GetAccuracy() - _currentGun._accuracy,
+                                                                _theCrosshair.GetAccuracy() + _currentGun._accuracy),
+                                                            0),
                 out _hitInfo, _currentGun._range))
         {
-            GameObject clone = Instantiate(_hit_effect_prefab, _hitInfo.point, Quaternion.LookRotation(_hitInfo.normal));
+            GameObject clone =
+                Instantiate(_hit_effect_prefab, _hitInfo.point, Quaternion.LookRotation(_hitInfo.normal));
             Destroy(clone, 2f);
         }
     }
 
     private void TryReload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !_isReload && _currentGun._currentBulletCount < _currentGun._reloadBulletCount)
+        if (Input.GetKeyDown(KeyCode.R) && !_isReload &&
+            _currentGun._currentBulletCount < _currentGun._reloadBulletCount)
         {
             CancelFineSight();
             StartCoroutine(ReloadCoroutine());
         }
     }
 
-    IEnumerator ReloadCoroutine() 
+    public void CancelReload()
+    {
+        if (_isReload)
+        {
+            StopAllCoroutines();
+            _isReload = false;
+        }
+    }
+
+    IEnumerator ReloadCoroutine()
     {
         if (_currentGun._carryBulletCount > 0)
         {
@@ -117,7 +138,7 @@ using UnityEngine;
 
             _currentGun._carryBulletCount += _currentGun._currentBulletCount;
             _currentGun._currentBulletCount = 0;
-            
+
             yield return new WaitForSeconds(_currentGun._reloadTime);
 
             if (_currentGun._carryBulletCount >= _currentGun._reloadBulletCount)
@@ -128,20 +149,20 @@ using UnityEngine;
             else
             {
                 _currentGun._currentBulletCount = _currentGun._carryBulletCount;
-                _currentGun._carryBulletCount = 0; 
+                _currentGun._carryBulletCount = 0;
             }
 
             _isReload = false;
         }
-        else{
+        else
+        {
             Debug.Log("소유한 총알이 없습니다.");
         }
-
     }
 
     private void TryFineSight()
     {
-        if (Input.GetButtonDown("Fire2")&&!_isReload)
+        if (Input.GetButtonDown("Fire2") && !_isReload)
         {
             FineSight();
         }
@@ -149,9 +170,10 @@ using UnityEngine;
 
     public void CancelFineSight()
     {
-        if(_isFineSightMode)
+        if (_isFineSightMode)
             FineSight();
     }
+
     private void FineSight()
     {
         _isFineSightMode = !_isFineSightMode;
@@ -178,7 +200,7 @@ using UnityEngine;
             yield return null;
         }
     }
-    
+
     IEnumerator FineSightDeactivateCoroutine()
     {
         while (_currentGun.transform.localPosition != _originPos)
@@ -192,13 +214,14 @@ using UnityEngine;
     IEnumerator RetroActionCoroutine()
     {
         Vector3 recoilBack = new Vector3(_currentGun._retroActionForce, _originPos.y, _originPos.z);
-        Vector3 retroActionRecoilBack = new Vector3(_currentGun._retroActionFineSightForce, _currentGun._fineSightOriginPos.y, _currentGun._fineSightOriginPos.z);
+        Vector3 retroActionRecoilBack = new Vector3(_currentGun._retroActionFineSightForce,
+            _currentGun._fineSightOriginPos.y, _currentGun._fineSightOriginPos.z);
 
         if (!_isFineSightMode)
         {
             _currentGun.transform.localPosition = _originPos;
-            
-            while (_currentGun.transform.localPosition.x <= _currentGun._retroActionForce -0.02f)
+
+            while (_currentGun.transform.localPosition.x <= _currentGun._retroActionForce - 0.02f)
             {
                 _currentGun.transform.localPosition =
                     Vector3.Lerp(_currentGun.transform.localPosition, recoilBack, 0.4f);
@@ -211,14 +234,12 @@ using UnityEngine;
                     Vector3.Lerp(_currentGun.transform.localPosition, _originPos, 0.1f);
                 yield return null;
             }
-            
-            
         }
         else
         {
             _currentGun.transform.localPosition = _currentGun._fineSightOriginPos;
-            
-            while (_currentGun.transform.localPosition.x <= _currentGun._retroActionFineSightForce -0.02f)
+
+            while (_currentGun.transform.localPosition.x <= _currentGun._retroActionFineSightForce - 0.02f)
             {
                 _currentGun.transform.localPosition =
                     Vector3.Lerp(_currentGun.transform.localPosition, retroActionRecoilBack, 0.4f);
@@ -233,7 +254,7 @@ using UnityEngine;
             }
         }
     }
-    
+
     private void PlaySE(AudioClip _clip)
     {
         _audioSource.clip = _clip;
@@ -248,5 +269,21 @@ using UnityEngine;
     public bool GetFineSightMode()
     {
         return _isFineSightMode;
+    }
+
+    public void GunChange(Gun _gun)
+    {
+        if (WeaponManager._currentWeapon != null)
+        {
+            WeaponManager._currentWeapon.gameObject.SetActive(false);
+        }
+
+        _currentGun = _gun;
+        WeaponManager._currentWeapon = _currentGun.GetComponent<Transform>();
+        WeaponManager._currentWeaponAnim = _currentGun.anim;
+
+        _currentGun.transform.localPosition = Vector3.zero;
+        _currentGun.gameObject.SetActive(true);
+        _isActivate = true;
     }
 }

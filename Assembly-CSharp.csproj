@@ -48,6 +48,8 @@
      <Compile Include="Assets/Scripts/HandController.cs" />
      <Compile Include="Assets/Scripts/HUD.cs" />
      <Compile Include="Assets/Scripts/Crosshair.cs" />
+     <Compile Include="Assets/Scripts/WeaponManager.cs" />
+     <Compile Include="Assets/Scripts/WeaponSway.cs" />
      <None Include="Assets/Water Shader/Water_Shader.shader" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

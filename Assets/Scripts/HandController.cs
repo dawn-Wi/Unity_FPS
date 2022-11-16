@@ -5,6 +5,8 @@ using UnityEngine;
 public class HandController : MonoBehaviour
 {
 
+    public static bool _isActivate = false;
+    
     [SerializeField]
     private Hand currentHand;
 
@@ -16,7 +18,10 @@ public class HandController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        TryAttack();
+        if (_isActivate)
+        {
+            TryAttack();
+        }
     }
 
     private void TryAttack()
@@ -68,5 +73,22 @@ public class HandController : MonoBehaviour
             return true;
         }
         return false;
+    }
+    
+    public void HandChange(Hand _hand)
+    {
+        if (WeaponManager._currentWeapon != null)
+        {
+            WeaponManager._currentWeapon.gameObject.SetActive(false);
+        }
+
+        currentHand= _hand;
+        WeaponManager._currentWeapon = currentHand.GetComponent<Transform>();
+        WeaponManager._currentWeaponAnim = currentHand.anim;
+        
+        currentHand.transform.localPosition = Vector3.zero;
+        currentHand.gameObject.SetActive(true);
+
+        _isActivate = true;
     }
 }

@@ -360,6 +360,8 @@
 "Assets/Scripts/HandController.cs"
 "Assets/Scripts/HUD.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/WeaponManager.cs"
+"Assets/Scripts/WeaponSway.cs"
 -langversion:9.0
 
 /deterministic

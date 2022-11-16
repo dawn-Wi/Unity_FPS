@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
     private void IsGround()
     {
         _isGround = Physics.Raycast(transform.position, Vector3.down, _capsuleCollider.bounds.extents.y+0.1f);
-        _theCrosshair.RunningAnimation(!_isGround);
+        _theCrosshair.JumpingAnimation(!_isGround);
     }
     
     private void TryJump()
