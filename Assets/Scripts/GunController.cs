@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+ using Random = UnityEngine.Random;
 
-public class GunController : MonoBehaviour
+ public class GunController : MonoBehaviour
 {
     [SerializeField] 
     private Gun _currentGun;
@@ -12,10 +13,10 @@ public class GunController : MonoBehaviour
 
     private bool _isReload = false;
 
-    private bool _isFineSightMode = false;
+    [HideInInspector]
+    public bool _isFineSightMode = false;
 
     private Vector3 _originPos;
-    
     
     private AudioSource _audioSource;
 
@@ -24,10 +25,16 @@ public class GunController : MonoBehaviour
     [SerializeField]
     private Camera _theCam;
 
+    private Crosshair _theCrosshair;
+
+    [SerializeField] 
+    private GameObject _hit_effect_prefab;
+    
     private void Start()
     {
         _originPos = Vector3.zero;
         _audioSource = GetComponent<AudioSource>();
+        _theCrosshair = FindObjectOfType<Crosshair>();
     }
 
     private void Update()
@@ -69,6 +76,7 @@ public class GunController : MonoBehaviour
 
     private void Shoot()
     {
+        _theCrosshair.FireAnimation();
         _currentGun._currentBulletCount--;
         _currentFireRate = _currentGun._fireRate; 
         PlaySE(_currentGun._fire_Sound);
@@ -80,9 +88,14 @@ public class GunController : MonoBehaviour
 
     private void Hit()
     {
-        if (Physics.Raycast(_theCam.transform.position, _theCam.transform.forward, out _hitInfo, _currentGun._range))
+        if (Physics.Raycast(_theCam.transform.position, _theCam.transform.forward + 
+                                                        new Vector3(Random.Range(-_theCrosshair.GetAccuracy() - _currentGun._accuracy, _theCrosshair.GetAccuracy() + _currentGun._accuracy),
+                                                                    Random.Range(-_theCrosshair.GetAccuracy() - _currentGun._accuracy, _theCrosshair.GetAccuracy() + _currentGun._accuracy),
+                                                                    0), 
+                out _hitInfo, _currentGun._range))
         {
-            Debug.Log(_hitInfo.transform.name);
+            GameObject clone = Instantiate(_hit_effect_prefab, _hitInfo.point, Quaternion.LookRotation(_hitInfo.normal));
+            Destroy(clone, 2f);
         }
     }
 
@@ -143,7 +156,7 @@ public class GunController : MonoBehaviour
     {
         _isFineSightMode = !_isFineSightMode;
         _currentGun.anim.SetBool("FineSightMode", _isFineSightMode);
-
+        _theCrosshair.FineSightAnimation(_isFineSightMode);
         if (_isFineSightMode)
         {
             StopAllCoroutines();
@@ -225,5 +238,15 @@ public class GunController : MonoBehaviour
     {
         _audioSource.clip = _clip;
         _audioSource.Play();
+    }
+
+    public Gun GetGun()
+    {
+        return _currentGun;
+    }
+
+    public bool GetFineSightMode()
+    {
+        return _isFineSightMode;
     }
 }

@@ -18,9 +18,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     private float _jumpForce;
 
+    private bool _isWalk = false;
     private bool _isRun = false;
     private bool _isCrouch = false;
     private bool _isGround = true;
+
+    private Vector3 _lastPos;
 
     [SerializeField]
     private float _crouchPosY;
@@ -42,6 +45,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _myRigid;
 
     private GunController _theGunController;
+
+    private Crosshair _theCrosshair;
     
     
     // Start is called before the first frame update
@@ -49,9 +54,10 @@ public class PlayerController : MonoBehaviour
     {
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _myRigid = GetComponent<Rigidbody>();
-        _applySpeed = _walkSpeed;
         _theGunController = FindObjectOfType<GunController>();
+        _theCrosshair = FindObjectOfType<Crosshair>();
         
+        _applySpeed = _walkSpeed;
         _originPosY = -_theCamera.transform.localPosition.y;
         _applyCrouchPosY = _originPosY;
     }
@@ -64,6 +70,7 @@ public class PlayerController : MonoBehaviour
         TryRun();
         TryCrouch();
         Move();
+        MoveCheck();
         CameraRotationX();
         CharacterRotation();
     }
@@ -79,6 +86,7 @@ public class PlayerController : MonoBehaviour
     private void Crouch()
     {
         _isCrouch = !_isCrouch;
+        _theCrosshair.CrouchingAnimation(_isCrouch);
 
         if (_isCrouch)
         {
@@ -114,6 +122,7 @@ public class PlayerController : MonoBehaviour
     private void IsGround()
     {
         _isGround = Physics.Raycast(transform.position, Vector3.down, _capsuleCollider.bounds.extents.y+0.1f);
+        _theCrosshair.RunningAnimation(!_isGround);
     }
     
     private void TryJump()
@@ -152,12 +161,14 @@ public class PlayerController : MonoBehaviour
         _theGunController.CancelFineSight();
         
         _isRun = true;
+        _theCrosshair.RunningAnimation(_isRun);
         _applySpeed = _runSpeed;
     }
 
     private void RunningCancel()
     {
         _isRun = false;
+        _theCrosshair.RunningAnimation(_isRun);
         _applySpeed = _walkSpeed;
     }
 
@@ -172,6 +183,23 @@ public class PlayerController : MonoBehaviour
         Vector3 _velocity = (_moveHorizontal + _moveVertical).normalized*_applySpeed;
 
         _myRigid.MovePosition(transform.position + _velocity * Time.deltaTime); 
+    }
+
+    private void MoveCheck()
+    {
+        if (!_isRun && !_isCrouch && _isGround )
+        {
+            if (Vector3.Distance(_lastPos, transform.position)>=0.01f)
+            {
+                _isWalk = true;
+            }
+            else
+            {
+                _isWalk = false;
+            }
+            _theCrosshair.WalkingAnimation(_isWalk);
+            _lastPos = transform.position;
+        }
     }
 
     private void CameraRotationX()
