@@ -41,15 +41,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/Hand.cs" />
+     <Compile Include="Assets/Scripts/CloseWeapon.cs" />
      <Compile Include="Assets/Scripts/GunController.cs" />
      <Compile Include="Assets/Scripts/PlayerController.cs" />
-     <Compile Include="Assets/Scripts/Gun.cs" />
-     <Compile Include="Assets/Scripts/HandController.cs" />
-     <Compile Include="Assets/Scripts/HUD.cs" />
      <Compile Include="Assets/Scripts/Crosshair.cs" />
-     <Compile Include="Assets/Scripts/WeaponManager.cs" />
+     <Compile Include="Assets/Scripts/Gun.cs" />
+     <Compile Include="Assets/Scripts/AxeController.cs" />
+     <Compile Include="Assets/Scripts/HUD.cs" />
      <Compile Include="Assets/Scripts/WeaponSway.cs" />
+     <Compile Include="Assets/Scripts/WeaponManager.cs" />
+     <Compile Include="Assets/Scripts/HandController.cs" />
+     <Compile Include="Assets/Scripts/CloseWeaponController.cs" />
+     <Compile Include="Assets/Scripts/PickaxeController.cs" />
      <None Include="Assets/Water Shader/Water_Shader.shader" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

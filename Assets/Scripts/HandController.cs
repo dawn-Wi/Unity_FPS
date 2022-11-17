@@ -1,20 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class HandController : MonoBehaviour
+public class HandController : CloseWeaponController
 {
-
     public static bool _isActivate = false;
     
-    [SerializeField]
-    private Hand currentHand;
-
-    private bool _isAttack = false;
-    private bool _isSwing = false;
-
-    private RaycastHit hitInfo;
-
     // Update is called once per frame
     private void Update()
     {
@@ -24,35 +16,7 @@ public class HandController : MonoBehaviour
         }
     }
 
-    private void TryAttack()
-    {
-        if (Input.GetButton("Fire1"))
-        {
-            if (!_isAttack)
-            {
-                StartCoroutine(AttackCoroutine());
-            }
-        }
-    }
-
-    IEnumerator AttackCoroutine()
-    {
-        _isAttack = true;
-        currentHand.anim.SetTrigger("Attack");
-
-        yield return new WaitForSeconds(currentHand._attackDelayA);
-        _isSwing = true;
-
-        StartCoroutine(HitCoroutine());
-
-        yield return new WaitForSeconds(currentHand._attackDelayB);
-        _isSwing = false;
-
-        yield return new WaitForSeconds(currentHand._attackDelay - currentHand._attackDelayA - currentHand._attackDelayB);
-        _isAttack = false;
-    }
-
-    IEnumerator HitCoroutine()
+    protected override IEnumerator HitCoroutine()
     {
         while (_isSwing)
         {
@@ -65,30 +29,9 @@ public class HandController : MonoBehaviour
             yield return null;
         }
     }
-
-    private bool CheckObject()
+    public override void CloseWeaponChange(CloseWeapon _closeWeapon)
     {
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, currentHand._range))
-        {
-            return true;
-        }
-        return false;
-    }
-    
-    public void HandChange(Hand _hand)
-    {
-        if (WeaponManager._currentWeapon != null)
-        {
-            WeaponManager._currentWeapon.gameObject.SetActive(false);
-        }
-
-        currentHand= _hand;
-        WeaponManager._currentWeapon = currentHand.GetComponent<Transform>();
-        WeaponManager._currentWeaponAnim = currentHand.anim;
-        
-        currentHand.transform.localPosition = Vector3.zero;
-        currentHand.gameObject.SetActive(true);
-
+        base.CloseWeaponChange(_closeWeapon);
         _isActivate = true;
     }
 }

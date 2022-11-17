@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class GunController : MonoBehaviour
 {
-    public static bool _isActivate = true;
+    public static bool _isActivate = false;
 
     [SerializeField] private Gun _currentGun;
 
@@ -34,8 +34,7 @@ public class GunController : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _theCrosshair = FindObjectOfType<Crosshair>();
 
-        WeaponManager._currentWeapon = _currentGun.GetComponent<Transform>();
-        WeaponManager._currentWeaponAnim = _currentGun.anim;
+       
     }
 
     private void Update()
