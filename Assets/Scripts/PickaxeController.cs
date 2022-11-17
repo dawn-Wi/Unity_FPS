@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickaxeController : CloseWeaponController  
-{  public static bool _isActivate = true;
+public class PickaxeController : CloseWeaponController
+{
+    public static bool _isActivate = true;
 
     protected void Start()
     {
@@ -26,10 +27,13 @@ public class PickaxeController : CloseWeaponController
         {
             if (CheckObject())
             {
+                if (hitInfo.transform.tag == "Rock")
+                {
+                    hitInfo.transform.GetComponent<Rock>().Mining();
+                }
                 _isSwing = false;
                 Debug.Log(hitInfo.transform.name);
             }
-
             yield return null;
         }
     }
