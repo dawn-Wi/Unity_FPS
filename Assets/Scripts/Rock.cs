@@ -20,6 +20,8 @@ public class Rock : MonoBehaviour
     private GameObject _go_debris;
 
     [SerializeField] private GameObject _go_effect_prefabs;
+    [SerializeField] private GameObject _go_rock_item_prefab;
+    [SerializeField] private int _count;
 
     [SerializeField] private string _strike_Sound;
 
@@ -42,6 +44,11 @@ public class Rock : MonoBehaviour
     {
         SoundManager._instansce.PlaySE(_destroy_Sound);
         _col.enabled = false;
+
+        for (int i = 0; i < _count; i++)
+        {
+            Instantiate(_go_rock_item_prefab, _go_rock.transform.position, Quaternion.identity);
+        }
         Destroy(_go_rock);
         
         _go_debris.SetActive(true);

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8475747460547259346}
   - component: {fileID: 8475747460547259347}
   - component: {fileID: 8475747460547259341}
-  - component: {fileID: 8475747460547259340}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Rock
@@ -67,105 +66,10 @@ MonoBehaviour:
   _go_rock: {fileID: 8745584453420130598}
   _go_debris: {fileID: 8745584453545750014}
   _go_effect_prefabs: {fileID: 3599011096520524454, guid: 744f672e0d594438093652af5148493c, type: 3}
-  _audioSource: {fileID: 8475747460547259340}
-  _effect_sound: {fileID: 8300000, guid: 5ebbadd06578240ab80063c26f7118ba, type: 3}
-  _effect_sound2: {fileID: 8300000, guid: 9fa519a038d254d6eb39e116d299de75, type: 3}
---- !u!82 &8475747460547259340
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8475747460547259344}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  _go_rock_item_prefab: {fileID: 1709444323135856521, guid: 6ecfb658a309447d19ecc1fa412f1724, type: 3}
+  _count: 5
+  _strike_Sound: Pickaxe_Strike
+  _destroy_Sound: Pickaxe_Destroy
 --- !u!1001 &8475747460000783479
 PrefabInstance:
   m_ObjectHideFlags: 0
