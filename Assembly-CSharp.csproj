@@ -54,6 +54,8 @@
      <Compile Include="Assets/Scripts/CloseWeaponController.cs" />
      <Compile Include="Assets/Scripts/PickaxeController.cs" />
      <Compile Include="Assets/Scripts/Rock.cs" />
+     <Compile Include="Assets/Scripts/SoundManager.cs" />
+     <Compile Include="Assets/Scripts/UI Script/StatusController.cs" />
      <None Include="Assets/Water Shader/Water_Shader.shader" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
