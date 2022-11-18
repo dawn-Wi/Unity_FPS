@@ -15,6 +15,7 @@ public class ActionController : MonoBehaviour
     [SerializeField] private LayerMask _layerMask; //아이템 레이어에만 반응하도록 
 
     [SerializeField] private Text _actionText;
+    [SerializeField] private Inventory _theInventory;
 
     // Update is called once per frame
     private void Update()
@@ -39,6 +40,7 @@ public class ActionController : MonoBehaviour
             if (_hitInfo.transform != null)
             {
                 Debug.Log(_hitInfo.transform.GetComponent<ItemPickup>()._Item._itemName + "획득했습니다.");
+                _theInventory.AcquireItem(_hitInfo.transform.GetComponent<ItemPickup>()._Item);
                 Destroy(_hitInfo.transform.gameObject);
                 InfoDisappear();
             }
