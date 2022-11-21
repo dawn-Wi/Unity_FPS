@@ -62,6 +62,9 @@
      <Compile Include="Assets/Scripts/HandController.cs" />
      <Compile Include="Assets/Scripts/UI Script/StatusController.cs" />
      <Compile Include="Assets/Scripts/UI Script/DragSlot.cs" />
+     <Compile Include="Assets/Scripts/ItemEffectDatabase.cs" />
+     <Compile Include="Assets/Scripts/UI Script/SlotToolTip.cs" />
+     <Compile Include="Assets/Scripts/NPC/Pig.cs" />
      <None Include="Assets/Water Shader/Water_Shader.shader" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

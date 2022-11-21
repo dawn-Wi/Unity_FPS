@@ -5,9 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
+public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
-    
     public Item _item;
 
     public int _itemCount;
@@ -17,11 +16,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
 
     [SerializeField] private Text _text_Count;
     [SerializeField] private GameObject _go_CountImage;
-    private WeaponManager _theWeaponManager;
+
+    private ItemEffectDatabase _theItemEffectDatabase;
 
     private void Start()
     {
-        _theWeaponManager = FindObjectOfType<WeaponManager>();
+        _theItemEffectDatabase = FindObjectOfType<ItemEffectDatabase>();
     }
 
     private void SetColor(float _alpha)
@@ -30,8 +30,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         _color.a = _alpha;
         _itemImage.color = _color;
     }
-    
-    public void AddItem(Item item, int _count=1)
+
+    public void AddItem(Item item, int _count = 1)
     {
         _item = item;
         _itemCount = _count;
@@ -47,7 +47,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
             _text_Count.text = "0";
             _go_CountImage.SetActive(false);
         }
-        
+
         SetColor(1);
     }
 
@@ -56,7 +56,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         _itemCount += _count;
         _text_Count.text = _itemCount.ToString();
 
-        if (_itemCount <=0)
+        if (_itemCount <= 0)
         {
             ClearSlot();
         }
@@ -68,7 +68,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         _itemCount = 0;
         _itemImage.sprite = null;
         SetColor(0);
-        
+
         _text_Count.text = "0";
         _go_CountImage.SetActive(false);
     }
@@ -79,13 +79,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         {
             if (_item != null)
             {
-                if (_item._ItemType == Item.ItemType.Equipment)
+                _theItemEffectDatabase.UseItem(_item);
+                if (_item._ItemType == Item.ItemType.Used)
                 {
-                    StartCoroutine(_theWeaponManager.ChangeWeaponCoroutine(_item._weaponType, _item._itemName));
-                }
-                else
-                {
-                    Debug.Log(_item._itemName+"을 사용했습니다.");
                     SetSlotCount(-1);
                 }
             }
@@ -128,7 +124,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
     {
         Item _tempItem = _item;
         int _tempItemCount = _itemCount;
-        
+
         AddItem(DragSlot._instance._dragSlot._item, DragSlot._instance._dragSlot._itemCount);
 
         if (_tempItem != null)
@@ -139,5 +135,20 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         {
             DragSlot._instance._dragSlot.ClearSlot();
         }
+    }
+
+    //마우스가 슬롯에 들어갈 때 발동
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (_item != null)
+        {
+            _theItemEffectDatabase.ShowToolTip(_item,transform.position);
+        }
+    }
+
+    //슬롯에서 빠져나갈 때 발동
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _theItemEffectDatabase.HideToolTip();
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     public string _itemName;
+    [TextArea]
+    public string _itemDesc;
     public ItemType _ItemType;
     public Sprite _itemImage;
     public GameObject _itemPrefab;
