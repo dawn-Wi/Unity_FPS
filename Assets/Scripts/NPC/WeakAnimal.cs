@@ -7,11 +7,12 @@ public class WeakAnimal : Animal
     
     public void Run(Vector3 _targetPos)
     {
-        _direction = Quaternion.LookRotation(transform.position - _targetPos).eulerAngles;
+        _destination = new Vector3(transform.position.x - _targetPos.x, 0f, transform.position.z - _targetPos.z)
+            .normalized;
         _currentTime = _runTime;
         _isWalking = false;
         _isRunning = true;
-        _applySpeed = _runSpeed;
+        _nav.speed = _runSpeed;
         _anim.SetBool("Running", _isRunning);
     }
 
