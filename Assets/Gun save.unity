@@ -814,6 +814,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pig
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fe4544bea831745f98b6ed184aa5a50d, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 8417361359673230750, guid: fe4544bea831745f98b6ed184aa5a50d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1852,8 +1856,8 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 5ebbadd06578240ab80063c26f7118ba, type: 3}
   - _name: Pickaxe_Destroy
     _clip: {fileID: 8300000, guid: 9fa519a038d254d6eb39e116d299de75, type: 3}
-  - _name: 
-    _clip: {fileID: 0}
+  - _name: Animal_Hit
+    _clip: {fileID: 8300000, guid: 138a4e764b380449c8b4921af9838fe4, type: 3}
   - _name: 
     _clip: {fileID: 0}
   - _name: 
@@ -8102,9 +8106,10 @@ GameObject:
   - component: {fileID: 1094562815}
   - component: {fileID: 1094562814}
   - component: {fileID: 1094562813}
+  - component: {fileID: 1094562817}
   m_Layer: 0
   m_Name: Pig
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8124,11 +8129,19 @@ MonoBehaviour:
   _animalName: Pig
   _hp: 2
   _walkSpeed: 1
+  _runSpeed: 4
   _walkTime: 5
   _waitTime: 4
+  _runTime: 3
   _anim: {fileID: 1064387789}
   _rigid: {fileID: 1094562815}
   _boxCol: {fileID: 1094562814}
+  _sound_Pig_Normal:
+  - {fileID: 8300000, guid: 564726f473b5a4bc89e467db02700af5, type: 3}
+  - {fileID: 8300000, guid: 45610370965ba44d5afd06674d1786f5, type: 3}
+  - {fileID: 8300000, guid: 92c4f546ebb714c49b16c7e7be678bcc, type: 3}
+  _sound_Pig_Hurt: {fileID: 8300000, guid: 032bbbe64c59b4738a713c2355c798b3, type: 3}
+  _sound_Pig_Dead: {fileID: 8300000, guid: 1be8b69dac6504f71bf71e0c41473c1f, type: 3}
 --- !u!65 &1094562814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8174,6 +8187,111 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1094562817
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094562812}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 5
+  MaxDistance: 30
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.33333334
+      value: 1
+      inSlope: -3.0011995
+      outSlope: -3.0011995
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6449992
+      value: 0.25289917
+      inSlope: -0.7502999
+      outSlope: -0.7502999
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.33346638
+      outSlope: -0.33346638
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.010009766
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!224 &1103934976 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 621284527139604367, guid: 503337eb9bd7341129cd56cef655f2c9, type: 3}
