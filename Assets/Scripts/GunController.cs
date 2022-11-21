@@ -21,6 +21,7 @@ public class GunController : MonoBehaviour
     private AudioSource _audioSource;
 
     private RaycastHit _hitInfo;
+    [SerializeField] private LayerMask _layerMask;
 
     [SerializeField] private Camera _theCam;
 
@@ -101,7 +102,7 @@ public class GunController : MonoBehaviour
                                                                 -_theCrosshair.GetAccuracy() - _currentGun._accuracy,
                                                                 _theCrosshair.GetAccuracy() + _currentGun._accuracy),
                                                             0),
-                out _hitInfo, _currentGun._range))
+                out _hitInfo, _currentGun._range, _layerMask))
         {
             GameObject clone =
                 Instantiate(_hit_effect_prefab, _hitInfo.point, Quaternion.LookRotation(_hitInfo.normal));

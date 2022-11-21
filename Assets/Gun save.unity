@@ -816,7 +816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fe4544bea831745f98b6ed184aa5a50d, type: 3}
       propertyPath: m_TagString
-      value: NPC
+      value: WeakAnimal
       objectReference: {fileID: 0}
     - target: {fileID: 8417361359673230750, guid: fe4544bea831745f98b6ed184aa5a50d, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -914,7 +914,7 @@ GameObject:
   - component: {fileID: 265053785}
   - component: {fileID: 265053784}
   - component: {fileID: 265053789}
-  m_Layer: 2
+  m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1013,7 +1013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265053783}
   m_LocalRotation: {x: -0, y: -0.9924979, z: -0, w: 0.12226204}
-  m_LocalPosition: {x: 50, y: 1, z: 55}
+  m_LocalPosition: {x: 47.95, y: 1, z: 55.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8107,9 +8107,10 @@ GameObject:
   - component: {fileID: 1094562814}
   - component: {fileID: 1094562813}
   - component: {fileID: 1094562817}
+  - component: {fileID: 1094562818}
   m_Layer: 0
   m_Name: Pig
-  m_TagString: NPC
+  m_TagString: WeakAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8130,18 +8131,19 @@ MonoBehaviour:
   _hp: 2
   _walkSpeed: 1
   _runSpeed: 4
+  _turningSpeed: 0.5
   _walkTime: 5
   _waitTime: 4
   _runTime: 3
   _anim: {fileID: 1064387789}
   _rigid: {fileID: 1094562815}
   _boxCol: {fileID: 1094562814}
-  _sound_Pig_Normal:
+  _sound_Normal:
   - {fileID: 8300000, guid: 564726f473b5a4bc89e467db02700af5, type: 3}
   - {fileID: 8300000, guid: 45610370965ba44d5afd06674d1786f5, type: 3}
   - {fileID: 8300000, guid: 92c4f546ebb714c49b16c7e7be678bcc, type: 3}
-  _sound_Pig_Hurt: {fileID: 8300000, guid: 032bbbe64c59b4738a713c2355c798b3, type: 3}
-  _sound_Pig_Dead: {fileID: 8300000, guid: 1be8b69dac6504f71bf71e0c41473c1f, type: 3}
+  _sound_Hurt: {fileID: 8300000, guid: 032bbbe64c59b4738a713c2355c798b3, type: 3}
+  _sound_Dead: {fileID: 8300000, guid: 1be8b69dac6504f71bf71e0c41473c1f, type: 3}
 --- !u!65 &1094562814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8179,7 +8181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094562812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.57, y: 0, z: 55.23}
+  m_LocalPosition: {x: 41.57, y: 0, z: 52.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8292,6 +8294,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1094562818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094562812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266b91eb4fa37414183f6607b6da3485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _viewAngle: 130
+  _viewDistance: 10
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!224 &1103934976 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 621284527139604367, guid: 503337eb9bd7341129cd56cef655f2c9, type: 3}
@@ -14714,6 +14733,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentCloseWeapon: {fileID: 919132147917760541}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 1587
 --- !u!114 &1598887786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14728,6 +14750,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentGun: {fileID: 124639751}
   _isFineSightMode: 0
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 1587
   _theCam: {fileID: 161580895}
   _hit_effect_prefab: {fileID: 4549089637826970606, guid: bd8d9f476bb8c49fbac01fb105599111, type: 3}
 --- !u!82 &1598887787
@@ -14882,6 +14907,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentCloseWeapon: {fileID: 3218777966474556006}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 1587
 --- !u!114 &1598887791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14895,6 +14923,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentCloseWeapon: {fileID: 1132857655586339200}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 1587
 --- !u!1001 &1663682638
 PrefabInstance:
   m_ObjectHideFlags: 0
