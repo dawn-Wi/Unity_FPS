@@ -47,8 +47,10 @@
      <Compile Include="Assets/Scripts/Item.cs" />
      <Compile Include="Assets/Scripts/GunController.cs" />
      <Compile Include="Assets/Scripts/PlayerController.cs" />
+     <Compile Include="Assets/Scripts/UI Script/Slot.cs" />
      <Compile Include="Assets/Scripts/PickaxeController.cs" />
      <Compile Include="Assets/Scripts/Crosshair.cs" />
+     <Compile Include="Assets/Scripts/UI Script/Inventory.cs" />
      <Compile Include="Assets/Scripts/Gun.cs" />
      <Compile Include="Assets/Scripts/AxeController.cs" />
      <Compile Include="Assets/Scripts/ActionController.cs" />
@@ -59,8 +61,7 @@
      <Compile Include="Assets/Scripts/Rock.cs" />
      <Compile Include="Assets/Scripts/HandController.cs" />
      <Compile Include="Assets/Scripts/UI Script/StatusController.cs" />
-     <Compile Include="Assets/Scripts/UI Script/Slot.cs" />
-     <Compile Include="Assets/Scripts/UI Script/Inventory.cs" />
+     <Compile Include="Assets/Scripts/UI Script/DragSlot.cs" />
      <None Include="Assets/Water Shader/Water_Shader.shader" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

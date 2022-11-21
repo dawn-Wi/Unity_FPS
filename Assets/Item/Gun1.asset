@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c2c5b816e8c42d5a930edcf5cc3407, type: 3}
   m_Name: Gun1
   m_EditorClassIdentifier: 
-  _itemName: SubMachineGun
+  _itemName: SubMachineGun1
   _ItemType: 0
   _itemImage: {fileID: 21300000, guid: b490e7281ecf348488b9c4d8391520f9, type: 3}
   _itemPrefab: {fileID: 7493302004600674841, guid: 4f223183a900d4b488beba19a474e58b, type: 3}
