@@ -355,6 +355,7 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/ActionController.cs"
 "Assets/Scripts/AxeController.cs"
+"Assets/Scripts/Building/SimpleTrap.cs"
 "Assets/Scripts/CloseWeapon.cs"
 "Assets/Scripts/CloseWeaponController.cs"
 "Assets/Scripts/Crosshair.cs"

@@ -71,6 +71,7 @@
      <Compile Include="Assets/Scripts/UI Script/StatusController.cs" />
      <Compile Include="Assets/Scripts/UI Script/DragSlot.cs" />
      <Compile Include="Assets/Scripts/NPC/GameManager.cs" />
+     <Compile Include="Assets/Scripts/Building/SimpleTrap.cs" />
      <None Include="Assets/Water Shader/Water_Shader.shader" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
