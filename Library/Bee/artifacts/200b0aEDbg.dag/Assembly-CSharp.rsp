@@ -359,6 +359,7 @@
 "Assets/Scripts/CloseWeapon.cs"
 "Assets/Scripts/CloseWeaponController.cs"
 "Assets/Scripts/Crosshair.cs"
+"Assets/Scripts/DayAndNight.cs"
 "Assets/Scripts/Gun.cs"
 "Assets/Scripts/GunController.cs"
 "Assets/Scripts/HandController.cs"
