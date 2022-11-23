@@ -51,6 +51,7 @@ public class CraftManual : MonoBehaviour
 
         if (_isPreviewAcitvated)
         {
+            GameManager._isOpenInventory = false;
             PreviewPositionUpdate();
         }
 
@@ -118,6 +119,7 @@ public class CraftManual : MonoBehaviour
 
     private void OpenWindow()
     {
+        GameManager._isOpenInventory = true;
         _isActivated = true;
         _go_BaseUi.SetActive(true);
     }
