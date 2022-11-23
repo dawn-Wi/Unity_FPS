@@ -4763,3 +4763,133 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2525.365160 seconds.
+  path: Assets/Water Shader/Water_Shader.shader
+  artifactKey: Guid(14e11b16bba644523af3296c3ca062ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Shader/Water_Shader.shader using Guid(14e11b16bba644523af3296c3ca062ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e15c2e28d6f0dd75fa14f7479fb072c3') in 0.067858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 67.377631 seconds.
+  path: Assets/Water Shader/Water Bump.jpg
+  artifactKey: Guid(c40f48e8194934725a04e882eabf7073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Shader/Water Bump.jpg using Guid(c40f48e8194934725a04e882eabf7073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6dbc8f4f7064b0fa687ab4f8c7d9523') in 0.645358 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.510054 seconds.
+  path: Assets/Water Shader/Water Bump.jpg
+  artifactKey: Guid(c40f48e8194934725a04e882eabf7073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Shader/Water Bump.jpg using Guid(c40f48e8194934725a04e882eabf7073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ab3614af91ec623f116f5496d237278') in 0.005354 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 240.599706 seconds.
+  path: Assets/Water Shader
+  artifactKey: Guid(bbb3e46d9cd184c1ebe0c7118981d6de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Shader using Guid(bbb3e46d9cd184c1ebe0c7118981d6de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a86a5f96eb48990eedc11cac7792075f') in 0.001370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5652.044463 seconds.
+  path: Assets/Water Shader/Water.mat
+  artifactKey: Guid(9611c0bc1558141fe9ce43c156ece2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Shader/Water.mat using Guid(9611c0bc1558141fe9ce43c156ece2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73e354ae95e32cb459963662db4a32a9') in 0.055722 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 80.926687 seconds.
+  path: Assets/Water Float/Demo/Standard Assets/Environment
+  artifactKey: Guid(6ca8c4e270f964e0da9f731d7d34b123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Float/Demo/Standard Assets/Environment using Guid(6ca8c4e270f964e0da9f731d7d34b123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fde35b0efb6bc9344c90e2d2d0a9ff3') in 0.000969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.050011 seconds.
+  path: Assets/Water Float/Demo/Standard Assets/Environment/Water
+  artifactKey: Guid(4f65f58f1750429468db4bef75317815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Float/Demo/Standard Assets/Environment/Water using Guid(4f65f58f1750429468db4bef75317815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77ac88dce4b30da9e0b06f7edad678d3') in 0.001609 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.495401 seconds.
+  path: Assets/Water Float/Demo/Standard Assets/Environment/Water/Water
+  artifactKey: Guid(e2e84b28786ce854391d79fb76df820b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Float/Demo/Standard Assets/Environment/Water/Water using Guid(e2e84b28786ce854391d79fb76df820b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecd4d4cbdcd98f4be653b6832b515417') in 0.001133 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.708342 seconds.
+  path: Assets/Water Float/Demo/Standard Assets/Environment/Water/Water/Shaders
+  artifactKey: Guid(e70b47c0cfc1d4b12a3c663d7582a523) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Float/Demo/Standard Assets/Environment/Water/Water/Shaders using Guid(e70b47c0cfc1d4b12a3c663d7582a523) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50c7041560745ebe30966da962fd5de7') in 0.001941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.157757 seconds.
+  path: Assets/Water Float/Demo/Standard Assets/Environment/Water/Water/Shaders/FXWaterPro.shader
+  artifactKey: Guid(1cac2e0bcc34e4b3cbb4bd85982eba83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Float/Demo/Standard Assets/Environment/Water/Water/Shaders/FXWaterPro.shader using Guid(1cac2e0bcc34e4b3cbb4bd85982eba83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e8ebc29e7187e4ff8af1f9c0ebb1c3b') in 0.004363 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 96.333635 seconds.
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(fc62486beb51e427b901d7ef99f79851) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(fc62486beb51e427b901d7ef99f79851) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dde392be58ba16238b7b3c583018250') in 0.017867 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001678 seconds.
+Begin MonoManager ReloadAssembly
+Thread 0x16d8b3000 may have been prematurely finalized
+Symbol file LoadedFromMemory doesn't match image /Users/widawn/My project/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/widawn/My project/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.531 seconds
+Domain Reload Profiling:
+	ReloadAssembly (532ms)
+		BeginReloadAssembly (89ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (2ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (387ms)
+			LoadAssemblies (39ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (140ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (167ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (38ms)
+				ProcessInitializeOnLoadAttributes (107ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (2ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.00 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3409 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (371.6 KB). Loaded Objects now: 4178.
+Memory consumption went from 0.72 GB to 0.72 GB.
+Total: 2.392375 ms (FindLiveObjects: 0.126625 ms CreateObjectMapping: 0.055125 ms MarkObjects: 2.001208 ms  DeleteObjects: 0.208667 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 125.959563 seconds.
+  path: Assets/Water Shader/Water.mat
+  artifactKey: Guid(9611c0bc1558141fe9ce43c156ece2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Water Shader/Water.mat using Guid(9611c0bc1558141fe9ce43c156ece2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5d615356029f4af8402d0c5f1759aff') in 0.223011 seconds 
