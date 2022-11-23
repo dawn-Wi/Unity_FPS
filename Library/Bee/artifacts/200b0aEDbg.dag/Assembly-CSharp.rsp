@@ -383,6 +383,7 @@
 "Assets/Scripts/UI Script/Slot.cs"
 "Assets/Scripts/UI Script/SlotToolTip.cs"
 "Assets/Scripts/UI Script/StatusController.cs"
+"Assets/Scripts/Water/Water.cs"
 "Assets/Scripts/WeaponManager.cs"
 "Assets/Scripts/WeaponSway.cs"
 -langversion:9.0
