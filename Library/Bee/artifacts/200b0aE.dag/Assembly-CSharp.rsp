@@ -380,6 +380,7 @@
 "Assets/Scripts/UI Script/CraftManual.cs"
 "Assets/Scripts/UI Script/DragSlot.cs"
 "Assets/Scripts/UI Script/Inventory.cs"
+"Assets/Scripts/UI Script/PauseMenu.cs"
 "Assets/Scripts/UI Script/Slot.cs"
 "Assets/Scripts/UI Script/SlotToolTip.cs"
 "Assets/Scripts/UI Script/StatusController.cs"

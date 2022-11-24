@@ -29,7 +29,7 @@ public class WeaponSway : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!Inventory._inventoryActivated)
+        if (GameManager._canPlayerMove)
         {
             TrySway();
         }
