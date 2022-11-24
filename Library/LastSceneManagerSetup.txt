@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Gun save.unity
+- path: Assets/Scenes/GameMain.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
