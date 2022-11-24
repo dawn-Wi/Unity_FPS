@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/ItemPickup.cs" />
+     <Compile Include="Assets/Scripts/Building/SimpleTrap.cs" />
      <Compile Include="Assets/Scripts/CloseWeapon.cs" />
      <Compile Include="Assets/Scripts/CloseWeaponController.cs" />
      <Compile Include="Assets/Scripts/NPC/Pig.cs" />
@@ -57,12 +58,15 @@
      <Compile Include="Assets/Scripts/UI Script/SlotToolTip.cs" />
      <Compile Include="Assets/Scripts/Gun.cs" />
      <Compile Include="Assets/Scripts/NPC/Animal.cs" />
+     <Compile Include="Assets/Scripts/Water/Water.cs" />
      <Compile Include="Assets/Scripts/ItemEffectDatabase.cs" />
+     <Compile Include="Assets/Scripts/DayAndNight.cs" />
      <Compile Include="Assets/Scripts/AxeController.cs" />
      <Compile Include="Assets/Scripts/ActionController.cs" />
      <Compile Include="Assets/Scripts/HUD.cs" />
      <Compile Include="Assets/Scripts/SoundManager.cs" />
      <Compile Include="Assets/Scripts/WeaponSway.cs" />
+     <Compile Include="Assets/Scripts/NPC/GameManager.cs" />
      <Compile Include="Assets/Scripts/WeaponManager.cs" />
      <Compile Include="Assets/Scripts/NPC/FieldOfViewAngle.cs" />
      <Compile Include="Assets/Scripts/Rock.cs" />
@@ -70,10 +74,6 @@
      <Compile Include="Assets/Scripts/UI Script/CraftManual.cs" />
      <Compile Include="Assets/Scripts/UI Script/StatusController.cs" />
      <Compile Include="Assets/Scripts/UI Script/DragSlot.cs" />
-     <Compile Include="Assets/Scripts/NPC/GameManager.cs" />
-     <Compile Include="Assets/Scripts/Building/SimpleTrap.cs" />
-     <Compile Include="Assets/Scripts/DayAndNight.cs" />
-     <Compile Include="Assets/Scripts/Water/Water.cs" />
      <None Include="Assets/Water Shader/Water_Shader.shader" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.12f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

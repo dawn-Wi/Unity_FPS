@@ -359,6 +359,7 @@
 "Assets/Scripts/CloseWeapon.cs"
 "Assets/Scripts/CloseWeaponController.cs"
 "Assets/Scripts/Crosshair.cs"
+"Assets/Scripts/DayAndNight.cs"
 "Assets/Scripts/Gun.cs"
 "Assets/Scripts/GunController.cs"
 "Assets/Scripts/HandController.cs"
@@ -382,6 +383,7 @@
 "Assets/Scripts/UI Script/Slot.cs"
 "Assets/Scripts/UI Script/SlotToolTip.cs"
 "Assets/Scripts/UI Script/StatusController.cs"
+"Assets/Scripts/Water/Water.cs"
 "Assets/Scripts/WeaponManager.cs"
 "Assets/Scripts/WeaponSway.cs"
 -langversion:9.0
